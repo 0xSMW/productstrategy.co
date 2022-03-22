@@ -13,8 +13,8 @@ class SiteMapManager {
 
         this.pages = options.pages || this.createPagesGenerator(options);
         this.posts = options.posts || this.createPostsGenerator(options);
-        // this.users = this.authors = options.authors || this.createUsersGenerator(options);
-        // this.tags = options.tags || this.createTagsGenerator(options);
+        this.users = this.authors = options.authors || this.createUsersGenerator(options);
+        this.tags = options.tags || this.createTagsGenerator(options);
         this.index = options.index || this.createIndexGenerator();
 
         events.on('router.created', (router) => {
@@ -38,8 +38,8 @@ class SiteMapManager {
         events.on('routers.reset', () => {
             this.pages && this.pages.reset();
             this.posts && this.posts.reset();
-            // this.users && this.users.reset();
-            // this.tags && this.tags.reset();
+            this.users && this.users.reset();
+            this.tags && this.tags.reset();
         });
     }
 
@@ -63,11 +63,11 @@ class SiteMapManager {
     }
 
     createUsersGenerator(options) {
-        // return new UsersMapGenerator(options);
+         return new UsersMapGenerator(options);
     }
 
     createTagsGenerator(options) {
-        // return new TagsMapGenerator(options);
+        return new TagsMapGenerator(options);
     }
 
     getIndexXml() {
