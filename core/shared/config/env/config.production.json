@@ -1,0 +1,21 @@
+{
+    "database": {
+        "client": "mysql",
+        "connection": {
+            "host"     : "127.0.0.1",
+            "user"     : "ps_ghost",
+            "password" : "TacoParty1@123",
+            "database" : "ps_ghost"
+        }
+    },
+    "paths": {
+        "contentPath": "content/"
+    },
+    "logging": {
+        "level": "info",
+        "rotation": {
+            "enabled": true
+        },
+        "transports": ["file", "stdout"]
+    }
+}
